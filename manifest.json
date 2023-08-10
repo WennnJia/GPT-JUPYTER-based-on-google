@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Chatgpt3.6 Extension",
+    "version": "1.0.0",
+    "description": "Integrates Chatgpt with Google search.",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action":
+    {
+        "default_title": "AUTOGPT-3.5 <> Google",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/robot.png",
+            "32": "/robot.png",
+            "48": "/robot.png",
+            "128": "/robot.png"
+          }
+    },
+    "options_page": "option.html",
+    "permissions": ["storage"]
+
+}

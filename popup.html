@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your GPT to use</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="chatbox">
+        <div id="logo">
+            <img src="/robot.png" alt="GPT Logo">
+            <h1><strong>诺玛</strong></h1>
+        </div>
+        <!-- <div id="api-key-note"><strong>Make sure to put your OPENAI API Key in the Extension's Options Tab.</strong></div> -->
+        <div id="api-key-note" role="alert">
+            <a href="chrome-extension://ennmiieaahpgmdjfnmiliihlkkipjjic/option.html" class="alert-link"
+                target="_blank"><strong>Make sure to
+                    put your OPENAI API Key in the Extension's Options Tab.</strong></a>
+        </div>
+        <div id="messages"></div>
+        <div id="userInputArea">
+            <!-- <input type="text" id="userInput" placeholder="Type your message here...">
+            <button id="send">Send</button> -->
+            <div class="input-group">
+                <input type="text" id="userInput" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button id="send" type="button" class="btn btn-success"><strong>Go!</strong></button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+        <div id="authored-by">Created by Omar Alhory</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
