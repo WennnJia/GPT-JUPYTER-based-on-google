@@ -26,12 +26,20 @@
             <button id="send">Send</button> -->
             <div class="input-group">
                 <input type="text" id="userInput" placeholder="Search for...">
+                <select id="search-select" name="search-select">
+                    <option value="解释代码" id="explain" style="color: pink; font-size: medium;">解释代码</option>
+                    <option value="扩写代码" id="expand" style="color: skyblue; font-size: medium;">扩写代码</option>
+                    <option value="翻译成中文" id="translate" style="color: hotpink; font-size: medium;">中文翻译</option>
+                    <option value="检查语法" id="check" style="color: black; font-size: medium;">检查语法</option>
+                    <option value="优化代码" id="Optimization" style="color: greenyellow; font-size: medium;">优化代码</option>
+                    <option value="搜索" selected="selected"></option>
+                </select>
                 <span class="input-group-btn">
                     <button id="send" type="button" class="btn btn-success"><strong>Go!</strong></button>
                 </span>
             </div><!-- /input-group -->
         </div>
-        <div id="authored-by">Created by Omar Alhory</div>
+        <div id="authored-by">Created by SCNU</div>
     </div>
     <script src="popup.js"></script>
 </body>
