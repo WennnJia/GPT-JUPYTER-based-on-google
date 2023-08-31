@@ -82,3 +82,25 @@ function sendUserInput() {
     }
   );
 }
+
+
+var oContent =document.getElementById('content');
+oContent.onmouseup = function(){
+  alert(selectText());
+};  
+
+function selectText(){
+  if(document.Selection){       
+    //ie浏览器
+    return document.selection.createRange().text;     	 
+  }else{    
+    //标准浏览器
+    return window.getSelection().toString();	 
+  }	 
+}
+
+var oContent =document.getElementById('content');
+oContent.onmouseup = function(){
+  document.execCommand("Copy");	
+  alert("复制成功")
+}; 
