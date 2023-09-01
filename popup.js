@@ -84,23 +84,41 @@ function sendUserInput() {
 }
 
 
-var oContent =document.getElementById('content');
-oContent.onmouseup = function(){
-  alert(selectText());
-};  
 
-function selectText(){
-  if(document.Selection){       
-    //ie浏览器
-    return document.selection.createRange().text;     	 
-  }else{    
-    //标准浏览器
-    return window.getSelection().toString();	 
-  }	 
+
+document.addEventListener("DOMContentLoaded", function () {
+  var copyButton = document.getElementById("copyButton");
+  copyButton.addEventListener("click", copySelectedText);
+});
+
+function copySelectedText() {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.executeScript({
+      target: { tabId: tabs[0].id },
+      function: getSelectedText,
+    });
+  });
 }
 
-var oContent =document.getElementById('content');
-oContent.onmouseup = function(){
-  document.execCommand("Copy");	
-  alert("复制成功")
-}; 
+function getSelectedText() {
+  var selectedText = window.getSelection().toString();
+  chrome.tabs.executeScript({
+    function: copyToClipboard,
+    args: [selectedText],
+  });
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function () {
+    console.log("Text copied to clipboard:", text);
+    showMessage("Text copied successfully!");
+  });
+}
+
+function showMessage(message) {
+  var messageDiv = document.getElementById("message");
+  messageDiv.textContent = message;
+  setTimeout(function () {
+    messageDiv.textContent = "";
+  }, 2000); // 清除消息提示
+}
