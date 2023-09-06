@@ -8,12 +8,13 @@ body {
 #chatbox {
   width: 350px;
   height: 500px;
-  border: 1px solid #ccc;
   /* background-color: rgb(145, 219, 164); */
-  background-image: url(bg.jpg);
+  border: 8px solid #ccc;/*把边框改粗了一点*/
+  background-image: url(bg3.jpg);/*更换了背景图*/
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.5;
+  background-position: center center; /* 将背景图像在元素中垂直和水平方向上居中对齐 */
+  opacity: 0.8;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -56,40 +57,63 @@ body {
 #userInputArea {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
+/*search for 输入框*/
 #userInput {
-  flex-grow: 1;
   background-color: pink;
-  margin-right: 10px;
-  padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #containers {
+    display: flex;
+    flex-direction:row;
+    bottom: 2px;
+  }
+
+/* 使下拉菜单水平对齐 */
+#search-select {
+  position: relative;
+  top: 10px; /* 与输入框微调相反的位置调整 */
+  right:5px;
+}
+/*add*/
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-#send {
-  padding: 10px 20px;
-  background-color: #07c;
-  color: rgb(105, 189, 139);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  border-radius: 50px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+#retry {
+  margin: 27px 2px 2px 2px;
+  padding: 5px;
+}
+
+#search-select {
+  margin: 2px;
+  padding: 2px;
+  width: 85px; 
+  height: 25px; 
 }
 
 #send:hover {
-  background-color: #056;
+  background-color: rgb(132, 229, 240);
 }
 
 #authored-by {
+  position: absolute;
+  bottom: 3.5px;
+  left: 0;
+  width: 100%;
   font-size: 0.8rem;
   color: pink;
-  margin-top: 10px;
   text-align: center;
+  font-weight: bold;
 }
 
 .message {
@@ -111,3 +135,9 @@ body {
   color: pink;
   text-align: center;
 }
+
+
+
+
+
+
