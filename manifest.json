@@ -1,28 +1,38 @@
+
 {
-    "manifest_version": 3,
-    "name": "Chatgpt3.6 Extension",
-    "version": "1.0.0",
-    "description": "Integrates Chatgpt with Google search.",
-    "background": {
-        "service_worker": "background.js"
-    },
-    "action":
-    {
-        "default_title": "AUTOGPT-3.5 <> Google",
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "/robot.png",
+  "manifest_version": 3,
+  "name": "Chatgpt3.6 Extension",
+  "version": "1.0。0",
+  "description": "Integrates Chatgpt with Google search.",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "AUTOGPT-3.5 <> Google"
+  },
+  "permissions": ["storage","activeTab", "clipboardWrite","sidePanel", "tabs"],
+  "options_page": "option.html",
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  },
+  "icons": {
+    	   "16": "/robot.png",
             "32": "/robot.png",
             "48": "/robot.png",
             "128": "/robot.png"
-          }
-    },
-    "options_page": "option.html",
-    "permissions": ["storage","activeTab", "clipboardWrite"],
-	"content_scripts": [
-	  {
-	    "matches": ["<all_urls>"],
-	    "js": ["content.js"]
-	  }
-    ]
+  },
+  "content_scripts": [
+	{
+      "matches": [
+        "*://*/*.ipynb*",
+        "*://*/lab*"
+      ],
+      "js": ["content.js"]
+		}
+	]
 }
