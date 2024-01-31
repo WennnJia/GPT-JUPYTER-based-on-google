@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your GPT to use</title>
     <link rel="stylesheet" type="text/css" href="sidebar.css">
     <link rel="stylesheet" href="bootstrap.min.css">
@@ -25,16 +26,27 @@
         <div id="messages"></div>
         <div id="message"></div>
 
-      <div id="userInputArea">
 
-        <select id="search-select" name="search-select" value="Choose">
-          <option value="解释代码" id="explain" style="color: rgb(0, 128, 128); font-weight: bold;font-size: medium;">解释代码</option>
-          <option value="扩写代码" id="expand" style="color: rgb(255, 20, 147); font-weight: bold;font-family:Verdana, Geneva, sans-serif;font-size: medium;">扩写代码</option>
-          <option value="翻译成中文" id="translate" style="color: rgb(148, 0, 211); font-weight: bold;font-size: medium;">中文翻译</option>
-          <option value="检查语法" id="check" style="color:rgb(255, 127, 80);font-weight: bold;font-size: medium;">检查语法</option>
-          <option value="优化代码" id="Optimization" style="color: rgb(0, 191, 255); font-weight: bold;font-size: medium;">优化代码</option>
-          <option value="搜索..." selected="selected"></option>
-       </select>
+        <div class="btn-toolbar" role="toolbar" aria-label="Tool">
+          <div class="btn-group" id="button-container" role="group" aria-label="Tool">
+            <button id="Copy" class="btn btn-default" btn-lg active type="submit"><span class="glyphicon glyphicon-copy"></span></button>
+            <button id="retry" type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+          </button> 
+          <select id="search-select" name="search-select" value="Choose">
+            <option value="解释代码" id="explain" style="color: rgb(0, 128, 128); font-weight: bold;font-size: medium;">解释代码</option>
+            <option value="扩写代码" id="expand" style="color: rgb(255, 20, 147); font-weight: bold;font-family:Verdana, Geneva, sans-serif;font-size: medium;">扩写代码</option>
+            <option value="翻译成中文" id="translate" style="color: rgb(148, 0, 211); font-weight: bold;font-size: medium;">中文翻译</option>
+            <option value="检查语法" id="check" style="color:rgb(255, 127, 80);font-weight: bold;font-size: medium;">检查语法</option>
+            <option value="优化代码" id="Optimization" style="color: rgb(0, 191, 255); font-weight: bold;font-size: medium;">优化代码</option>
+            <option value="搜索..." selected="selected"></option>
+         </select>
+        </div>
+
+      </div>
+
+
+      <div id="userInputArea">
 
 
         <!--实现文本框与按钮的结合-->
@@ -51,33 +63,33 @@
 
 
         
+       
 
             <!-- <input type="text" id="userInput" placeholder="Type your message here...">
-            <button id="send">Send</button> -->
+            <button id="send">Send</button> 
             <div class="button-container">
             <button id="retry" type="button" class="btn btn-default btn-lg">
                 <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
             </button>          
-         
-          
+            <button id="Copy" class="btn btn-default" btn-lg active type="submit"><span class="glyphicon glyphicon-copy"></span></button>
+-->
       </div> 
     </div>
-      
-    <button class="btn btn-default" btn-lg active type="submit">复制所选内容<span class="glyphicon glyphicon-copy"></span></button>
-    <div class="center-block">
-      <small><mark>使用鼠标选中文本 单击按钮将选定的文本复制到剪贴板上</mark></small>
-    </div>
+    <img id="zoomInButton" src="zoomIn.png" alt="Cute Icon">
+    <img id="zoomOutButton" src="zoomOut.png" alt="Cute Icon">
+
+
+    <div id="retrytip"></div>
+    <div id="copytip"></div>
 
     
 
    
-    <div id="logo2">
-      <img src="/test.png" alt="author Logo">
-    
+    <div id="bottomlogo">
       <div id="authored-by">由华南师范大学创建</div>
+      <img id="logo2" src="/test.png" alt="author Logo">
     </div>
     
-
     <script src="popup.js"></script>
 </body>
 

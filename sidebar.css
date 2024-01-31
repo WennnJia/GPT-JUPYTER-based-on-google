@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f6f6f6;
-  zoom: 1.2;
+  zoom: 1.15;
 }
 
 #chatbox {
@@ -41,25 +41,27 @@ body {
   font-weight: bold;
   margin: 0;
 }
-#logo2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+#bottomlogo {
+  display: flex;
+  justify-content: center; /* 在水平方向上居中 */
+  flex-direction:row;
+  align-items: flex-end;
+  position: fixed; /* 使用固定定位，使其相对于浏览器窗口定位 */
+  left: 50%;
+  transform: translateX(-50%); /* 通过平移来实现水平居中 */
+  bottom: 15px;
 }
-#logo2 img {
-  width: 15px;
-  height: 15px;
+#logo2{
+  width: 12px;
+  height: 12px;
   object-fit: contain;
-  margin-right: 10px;
-  bottom: 0px;
+  /* margin-right: 10px;
+  bottom: 5px; */
 }
 
 #authored-by {
-  position: absolute;
-  bottom: 3.5px;
-  margin:0;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   color: rgb(130, 130, 133);
   font-weight: bold;
 }
@@ -77,10 +79,82 @@ body {
   margin-bottom: 5px;
 }
 
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  color: rgb(255, 254, 254);
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.userMessage {
+  color: rgb(1, 1, 1);
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
 #userInputArea {
   display: flex;
   align-items: center;
   margin-top: 20px;
+}
+
+.btn-toolbar {
+  position: fixed;
+  display: flex;
+  justify-content: center; /* 在水平方向上居中 */
+  flex-direction:row;
+  align-items: flex-end;
+  bottom: 15%;
+  right: 10px;
+}
+
+
+  /*功能按钮的容器*/
+  #button-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  #retry {
+    padding: 5px; 
+    max-width: 25px;
+    max-height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #Copy {
+    padding: 5px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+/* 使下拉菜单水平对齐 */
+#search-select {
+  margin-top: 0px;
+  position: relative;
+  justify-content: center;
+  padding: 2px;
+  width: 85px; 
+  height: 25px; 
+  z-index: 2;
+}
+
+
+#send:hover {
+  background-color:pink;
 }
 
 /*search for 输入框*/
@@ -90,81 +164,64 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  left:0;
+  width: 240px; 
   }
 
+/*输入框和发送按钮的容器*/
   #containers {
     display: flex;
     flex-direction:row;
-    bottom: -10px;
-    left:-88px;
+    bottom: 10px;
+    left:8px;
   }
 
 
-/* 使下拉菜单水平对齐 */
-#search-select {
-  margin-top: 0px;
-  position: relative;
-  justify-content: center;
-  right:-210px;
-  top:-28px;
-  margin: 2px;
-  padding: 2px;
-  width: 85px; 
-  height: 25px; 
-  z-index: 2;
-}
-
-/*add*/
-.button-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-#retry {
-  margin: 22px 5px 4px 4px;
-  padding: 5px;
-  position: relative;
-  z-index: 1;
-  margin-left: -25px;
-}
-
-
-
-#send:hover {
-  background-color:pink;
-}
-
-
-
-.message {
-  margin-bottom: 10px;
-  padding: 10px;
-  color: rgb(251, 8, 8);
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.userMessage {
-  color: blue;
-  margin-left: 10px;
-  font-size: 0.9rem;
-  font-weight: bold;
-}
 
 .check {
   color: pink;
   text-align: center;
 }
 
-.copyButton{
-  padding: 10px 20px;
-  font-weight: bold;
+
+/* 设置图标的最大宽度和高度 */
+#zoomInButton {
+  max-width: 18px;  
+  max-height: 18px; 
+/* 设置定位为固定定位 */
+position: fixed;
+top: 10px;
+right: 25px;
+  /* 可以根据需要调整宽度和高度 */
 }
 
+#zoomOutButton {
+  max-width: 18px;  
+  max-height: 18px; 
+  position: fixed;
+  top: 10px;
+  right:5px;
+  /* 可以根据需要调整宽度和高度 */
+}
+
+#copytip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 2px;
+  font-size: 10px;/*调节字号大小*/
+  border-radius: 3px;
+}
+
+#retrytip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 2px;
+  font-size: 10px;/*调节字号大小*/
+  border-radius: 3px;
+}
 
 
 

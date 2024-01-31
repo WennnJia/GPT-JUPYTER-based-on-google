@@ -122,3 +122,58 @@ function showMessage(message) {
     messageDiv.textContent = "";
   }, 2000); // 清除消息提示
 }
+
+
+// 初始缩放级别
+let currentScale = 1.0;
+
+document.getElementById('zoomInButton').addEventListener('click', function() {
+    // 增加缩放级别
+    currentScale += 0.1;
+
+    // 设置插件页面缩放
+    document.body.style.transform = 'scale(' + currentScale + ')';
+});
+
+document.getElementById('zoomOutButton').addEventListener('click', function() {
+  // 增加缩放级别
+  currentScale -= 0.1;
+
+  // 设置插件页面缩放
+  document.body.style.transform = 'scale(' + currentScale + ')';
+});
+
+//悬浮文字功能
+document.addEventListener('DOMContentLoaded', function() {
+  const button = document.getElementById('Copy');
+  const tooltip = document.getElementById('copytip');
+
+  button.addEventListener('mouseover', function() {
+      const buttonRect = button.getBoundingClientRect();
+      tooltip.style.display = 'block';
+      tooltip.style.left = `${buttonRect.left}px`;
+      tooltip.style.top = `${buttonRect.top - 30}px`; // Adjust the position as needed
+      tooltip.innerHTML = '使用鼠标选中文本 单击按钮将选定的文本复制到剪贴板上';
+  });
+
+  button.addEventListener('mouseout', function() {
+      tooltip.style.display = 'none';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const button = document.getElementById('retry');
+  const tooltip = document.getElementById('retrytip');
+
+  button.addEventListener('mouseover', function() {
+      const buttonRect = button.getBoundingClientRect();
+      tooltip.style.display = 'block';
+      tooltip.style.left = `${buttonRect.left}px`;
+      tooltip.style.top = `${buttonRect.top - 18}px`; // Adjust the position as needed
+      tooltip.innerHTML = '重新提问';
+  });
+
+  button.addEventListener('mouseout', function() {
+      tooltip.style.display = 'none';
+  });
+});

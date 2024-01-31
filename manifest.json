@@ -2,7 +2,7 @@
 {
   "manifest_version": 3,
   "name": "Chatgpt3.6 Extension",
-  "version": "1.0。0",
+  "version": "1.0.0",
   "description": "Integrates Chatgpt with Google search.",
   "background": {
     "service_worker": "service-worker.js"
@@ -12,6 +12,7 @@
   },
   "permissions": ["storage","activeTab", "clipboardWrite","sidePanel", "tabs"],
   "options_page": "option.html",
+
   "commands": {
     "_execute_action": {
       "suggested_key": {
