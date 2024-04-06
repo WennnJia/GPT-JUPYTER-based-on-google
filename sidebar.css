@@ -2,21 +2,24 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6;
+  background-color: white;
   zoom: 1.15;
 }
 
 #chatbox {
   width: 350px;
-  height: 500px;
-  background-color: rgb(145, 219, 164); 
-  border: 8px solid #268cf1;/*把边框改粗了一点*/
-  background-image: url(newbg.jpg);/*更换了背景图*/
+  height: 648px;
+  background-color: rgb(145, 219, 164);
+  border: 8px solid #268cf1;
+  /*把边框改粗了一点*/
+  background-image: url(newbg.jpg);
+  /*更换了背景图*/
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center; /* 将背景图像在元素中垂直和水平方向上居中对齐 */
-  opacity: 0.6;
-  padding: 10px;
+  background-position: center center;
+  /* 将背景图像在元素中垂直和水平方向上居中对齐 */
+  opacity: 1;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -33,7 +36,7 @@ body {
   width: 30px;
   height: 30px;
   object-fit: contain;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 #logo h1 {
@@ -44,31 +47,35 @@ body {
 
 #bottomlogo {
   display: flex;
-  justify-content: center; /* 在水平方向上居中 */
-  flex-direction:row;
+  justify-content: center;
+  /* 在水平方向上居中 */
+  flex-direction: row;
   align-items: flex-end;
-  position: fixed; /* 使用固定定位，使其相对于浏览器窗口定位 */
+  position: fixed;
+  /* 使用固定定位，使其相对于浏览器窗口定位 */
   left: 50%;
-  transform: translateX(-50%); /* 通过平移来实现水平居中 */
+  transform: translateX(-50%);
+  /* 通过平移来实现水平居中 */
   bottom: 15px;
 }
-#logo2{
-  width: 12px;
-  height: 12px;
+
+#logo2 {
+  width: 16px;
+  height: 19px;
   object-fit: contain;
   /* margin-right: 10px;
   bottom: 5px; */
 }
 
 #authored-by {
-  font-size: 0.8rem;
-  color: rgb(130, 130, 133);
+  font-size: 1.2rem;
+  color: rgb(26 26 95);
   font-weight: bold;
 }
 
 #api-key-note {
-  color: rgb(245, 21, 21);
-  font-size: 0.9rem;
+  color: #ff3816;
+  font-size: 1.9rem;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -82,7 +89,7 @@ body {
 .message {
   margin-bottom: 10px;
   padding: 10px;
-  color: rgb(255, 254, 254);
+  color: darkblue;
   font-weight: bold;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -91,7 +98,7 @@ body {
 .userMessage {
   color: rgb(1, 1, 1);
   margin-left: 10px;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
@@ -104,42 +111,43 @@ body {
 .btn-toolbar {
   position: fixed;
   display: flex;
-  justify-content: center; /* 在水平方向上居中 */
-  flex-direction:row;
+  justify-content: center;
+  /* 在水平方向上居中 */
+  flex-direction: row;
   align-items: flex-end;
-  bottom: 15%;
-  right: 10px;
+  bottom: 11%;
+  right: 3px;
 }
 
 
-  /*功能按钮的容器*/
-  #button-container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  
-  #retry {
-    padding: 5px; 
-    max-width: 25px;
-    max-height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  
-  #Copy {
-    padding: 5px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 25px;
-    max-height: 25px;
-  }
+/*功能按钮的容器*/
+#button-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#retry {
+  padding: 5px;
+  max-width: 25px;
+  max-height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+#Copy {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 25px;
+  max-height: 25px;
+}
 
 /* 使下拉菜单水平对齐 */
 #search-select {
@@ -147,33 +155,33 @@ body {
   position: relative;
   justify-content: center;
   padding: 2px;
-  width: 85px; 
-  height: 25px; 
+  width: 85px;
+  height: 25px;
   z-index: 2;
 }
 
 
 #send:hover {
-  background-color:pink;
+  background-color: pink;
 }
 
 /*search for 输入框*/
 #userInput {
-  background-color: pink;
+  background-color: white;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   border-radius: 5px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  width: 240px; 
-  }
+  width: 260px;
+}
 
 /*输入框和发送按钮的容器*/
-  #containers {
-    display: flex;
-    flex-direction:row;
-    bottom: 10px;
-    left:8px;
-  }
+#containers {
+  display: flex;
+  flex-direction: row;
+  bottom: 20px;
+  left: 10px;
+}
 
 
 
@@ -185,21 +193,21 @@ body {
 
 /* 设置图标的最大宽度和高度 */
 #zoomInButton {
-  max-width: 18px;  
-  max-height: 18px; 
-/* 设置定位为固定定位 */
-position: fixed;
-top: 10px;
-right: 25px;
+  max-width: 18px;
+  max-height: 18px;
+  /* 设置定位为固定定位 */
+  position: fixed;
+  top: 10px;
+  right: 25px;
   /* 可以根据需要调整宽度和高度 */
 }
 
 #zoomOutButton {
-  max-width: 18px;  
-  max-height: 18px; 
+  max-width: 18px;
+  max-height: 18px;
   position: fixed;
   top: 10px;
-  right:5px;
+  right: 5px;
   /* 可以根据需要调整宽度和高度 */
 }
 
@@ -209,7 +217,8 @@ right: 25px;
   background-color: #333;
   color: #fff;
   padding: 2px;
-  font-size: 10px;/*调节字号大小*/
+  font-size: 10px;
+  /*调节字号大小*/
   border-radius: 3px;
 }
 
@@ -219,11 +228,7 @@ right: 25px;
   background-color: #333;
   color: #fff;
   padding: 2px;
-  font-size: 10px;/*调节字号大小*/
+  font-size: 10px;
+  /*调节字号大小*/
   border-radius: 3px;
 }
-
-
-
-
-
